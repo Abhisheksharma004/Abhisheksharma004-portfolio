@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090a0f;
+  --foreground: #f4f4f5;
+  --muted: #71717a;
+  --border: #27272a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Clean transparent developer card matching user reference image */
+.clean-card {
+  background: rgba(15, 20, 32, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clean-card:hover {
+  background: rgba(56, 189, 248, 0.04);
+  border-color: rgba(96, 165, 250, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.25);
+}
+
+/* Sophisticated Developer Grid Background Pattern */
+.bg-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Dot Matrix Pattern */
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Active Highlighted Grid that reveals under mouse movement */
+.bg-grid-active {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(96, 165, 250, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.25) 1px, transparent 1px);
+}
+
+/* Radial fade mask for soft gradient edges */
+.mask-radial {
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 15%, black 40%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 15%, black 40%, transparent 95%);
+}
+
+/* Hide system default mouse cursor on desktop so only custom pointer is visible */
+@media (hover: hover) and (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+  input, textarea {
+    cursor: text !important;
+  }
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  box-shadow: 0 0 12px 2px rgba(56, 189, 248, 0.9), 0 0 4px rgba(255, 255, 255, 0.9);
+  transition: width 0.2s cubic-bezier(0.16, 1, 0.3, 1), height 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1), height 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+  will-change: transform;
+}
+
+.custom-cursor-ring.hovered {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(96, 165, 250, 0.85);
+  background-color: rgba(56, 189, 248, 0.08);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.22);
+}
+
+.custom-cursor-dot.hovered {
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.95);
+}
+
+.custom-cursor-ring.clicked {
+  width: 26px;
+  height: 26px;
+  border-color: rgba(52, 211, 153, 0.9);
+  background-color: rgba(52, 211, 153, 0.15);
+}
+
+.custom-cursor-dot.clicked {
+  background-color: #34d399;
+}
+
+
