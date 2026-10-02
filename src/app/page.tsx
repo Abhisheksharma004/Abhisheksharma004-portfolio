@@ -66,7 +66,7 @@ export default function Home() {
     };
   }, []);
 
-  const profilePhotoUrl = "https://media.licdn.com/dms/image/v2/D4E03AQE5_soeAWc6fA/profile-displayphoto-scale_400_400/B4EZ_XdGneHsAg-/0/1786026160034?e=1790208000&v=beta&t=FsLGcmXlmpHWXHq445RBm2JgZZcIZvSw5arR2HQK274";
+  const profilePhotoUrl = "https://avatars.githubusercontent.com/u/124234286?v=4";
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText("abhishekkumarranjan965@gmail.com");
